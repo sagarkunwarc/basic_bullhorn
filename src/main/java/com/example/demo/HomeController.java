@@ -20,7 +20,7 @@ public class HomeController {
     @RequestMapping("/")
     public String listMessage(Model model){
         model.addAttribute("messages",messageRepository.findAll());
-        return "list";
+        return "index";
     }
     @GetMapping("/add")
     public String messageForm(Model model){
