@@ -1,9 +1,10 @@
 HELP.md
 /target/
 !.mvn/wrapper/maven-wrapper.jar
-_config.yml
-mvnw
-mvnw.md
+._config.yml
+.mvnw
+.mvnw.md
+.demo.iml
 
 ### STS ###
 .apt_generated
