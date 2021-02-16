@@ -21,16 +21,18 @@ import javax.validation.constraints.Size;
 @NoArgsConstructor
 public class Message {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
-  private long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
 
-  @NotNull
-  @Size(min = 2)
-  private String content;
+    @NotNull
+    @Size(min = 2)
+    private String content;
 
-  @NotNull private String posteddate;
+    @NotNull
+    private String posteddate;
 
-  @NotNull private String sentby;
+    @NotNull
+    private String sentby;
 
 }

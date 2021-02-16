@@ -20,36 +20,41 @@ public class HomeController {
     MessageRepository messageRepository;
 
     @RequestMapping("/")
-    public String listMessage(Model model){
-        model.addAttribute("messages",messageRepository.findAll());
+    public String listMessage(Model model) {
+        model.addAttribute("messages", messageRepository.findAll());
         return "index";
     }
+
     @GetMapping("/add")
-    public String messageForm(Model model){
-        model.addAttribute("message",new Message());
+    public String messageForm(Model model) {
+        model.addAttribute("message", new Message());
         return "messageform";
     }
+
     @PostMapping("/process")
-    public String processForm(@Valid Message message, BindingResult result){
-        if(result.hasErrors()){
+    public String processForm(@Valid Message message, BindingResult result) {
+        if (result.hasErrors()) {
             return "messageform";
         }
         messageRepository.save(message);
         return "redirect:/";
 
     }
+
     @RequestMapping("/details/{id}")
-    public String showMessage(@PathVariable("id") long id, Model model){
-        model.addAttribute("message",messageRepository.findById(id).get());
+    public String showMessage(@PathVariable("id") long id, Model model) {
+        model.addAttribute("message", messageRepository.findById(id).get());
         return "show";
     }
+
     @RequestMapping("/update/{id}")
-    public String updateMessage(@PathVariable("id") long id,Model model){
-        model.addAttribute("message",messageRepository.findById(id).get());
+    public String updateMessage(@PathVariable("id") long id, Model model) {
+        model.addAttribute("message", messageRepository.findById(id).get());
         return "messageform";
     }
+
     @RequestMapping("/delete/{id}")
-    public String delMessage(@PathVariable("id") long id){
+    public String delMessage(@PathVariable("id") long id) {
 
         messageRepository.deleteById(id);
         return "redirect:/";
