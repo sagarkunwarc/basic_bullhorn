@@ -1,11 +1,9 @@
 package com.example.demo.model;
 
 import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -30,9 +28,9 @@ public class Message {
     private String content;
 
     @NotNull
-    private String posteddate;
+    private String postedDate;
 
     @NotNull
-    private String sentby;
+    private String sentBy;
 
 }
